@@ -1,10 +1,9 @@
-import  express  from 'express';
+import  express  from 'express'
+import { router} from './routes'
 
-const server = express();
+const server = express()
 
-server.get('/', (req, res) => {
-    return res.send('ola dev')
-})
-
-
-export {server};
+server.use(router)
+server.use(express.json())
+ 
+export {server}
